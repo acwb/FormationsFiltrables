@@ -1,0 +1,545 @@
+/* -------------------------------- 
+POLICES CHARTE INSITE
+
+Titre h1 : Raleway Semi-Bold (600) 29px
+Titre h2 : Oswald Regular Caps 26px
+Titre h3 : Raleway Semi-Bold (600) 15px
+Paragraphe 1 : Raleway Semi-Bold (600) 15px
+Paragraphe 2 : Arial Regular 14px
+Lien : Arial Regular Underline 14px
+Petit italic : Arial Italic 13px 
+Petit gras : Arial Bold 14px
+-------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald|Raleway:600&display=swap');
+
+/* -------------------------------- 
+Font Awesome (juste le necessaire)
+-------------------------------- */
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg"); 
+}
+
+.fas {
+  font-family: 'Font Awesome 5 Free';  
+  font-weight: 900;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1; }
+
+.fa-arrow-left:before {  content: "\f060"; }
+.fa-arrow-circle-left:before {  content: "\f0a8"; }
+.fa-arrow-circle-right:before {  content: "\f0a9"; }
+.fa-clock:before {  content: "\f017"; }
+
+/* -------------------------------- 
+Style primaire
+-------------------------------- */
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: #000;
+  background-color: #ffffff;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+p {
+  font-family: "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #808080; /* gris paragraphe charte insite */
+}
+
+/* -------------------------------- 
+Popup overlay
+-------------------------------- */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 5px;
+  width: 40%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  font-size: 1em;
+  margin: 0 0 15px 0;
+  color: #333;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.popup .close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: #06D85F;
+}
+
+.popup .content {
+  max-height: 250px;
+  overflow: auto;
+  padding: 0 10px 0 0;
+}
+
+.popup .content p {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
+
+.popup .button {
+  width: 100%;
+  background-color: #4c87c6; /* bleu clair charte insite */
+  text-align: center;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 0.6em;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.popup .button:hover {
+  background-color: #336ca9; /* bleu moyen charte insite */
+}
+
+/* -------------------------------- 
+Grille filtrable
+-------------------------------- */
+
+.cd-main-content {
+  position: relative;
+  min-height: 80vh;
+  margin: 30px 20px !important;
+}
+
+.cd-main-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cd-gallery {
+  padding: 0px 3%;
+  width: calc(100% - 200px);
+  float: right;
+}
+
+.cd-gallery li {
+  margin-bottom: 1.1em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  background-color: #eeeeee; /* gris clair charte insite */
+  width: 100%;
+}
+
+.cd-gallery li:hover {
+  background-color: #dddddd;
+}
+
+.cd-gallery li.gap {
+  opacity: 0;
+  height: 0;
+  display: inline-block;
+}
+
+.formation-icon {
+  writing-mode: vertical-rl;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  text-orientation: mixed;
+  height: 62px;
+  width: 45px;
+  float: right;
+  margin: 23px 23px 0 0;
+}
+
+.formation-icon:before {
+  border-style: solid;
+  border-width: 2px;
+  padding: 12px;
+  display: inline-block;
+  font-family: 'Font Awesome 5 Free';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.formation-element {  /* wrapper block */
+  padding: 15px 85px 15px 17px; 
+  cursor: pointer; 
+}
+
+.formation-element .formation-title {  /* titre de la formation */
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 19px;  
+  font-weight: 500;  
+  text-transform: uppercase;
+  margin-bottom: 10px; 
+}
+
+.formation-element .formation-subtitle {  /* sous-domaine de formation */
+  font-size: 12px;
+  font-family: Arial;
+  font-weight: 300;
+  font-style: italic;
+  color: #666666;
+}
+
+.formation-element .formation-separator {
+  width: 40px;
+  height: 5px;
+  margin: 10px 0 ;
+}
+
+.formation-time { font-size: 0.5em; }
+
+.formation-time i { margin-right: 2px; }
+
+.disabled { opacity: 0.4; }
+
+.pager {  
+  margin-top: -20px;  
+  text-align: center;
+  color: #b1b1b1; 
+  font-size: 0.6em;
+}
+
+.pager i {  
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pager i:hover { color: #666666; }
+
+/* -------------------------------- 
+Gestion des couleurs
+-------------------------------- */
+
+.modal-1 .formation-icon:before { /* présentiel */
+  content: "\f108 "; /* = fa-desktop */
+  color: #71184e; /* violet charte insite */
+}
+
+.modal-2 .formation-icon:before { /* en ligne */
+  content: "\f51c "; /* = fa-chalkboard-teacher */
+  color: #3a6898; /* bleu foncé charte insite */
+}
+
+.modal-1 .formation-separator {
+  background-color: #71184e; /* violet charte insite */
+}
+
+.modal-2 .formation-separator {
+  background-color: #3a6898; /* bleu foncé charte insite */
+}
+
+
+/* -------------------------------- 
+Responsive
+-------------------------------- */
+
+@media only screen and (min-width: 868px) {  /* passage à 2 blocs par ligne à partir de 868px de large */
+  .cd-gallery {
+    padding: 0px 2%;
+    float: right;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    width: calc(100% - 200px);
+  }
+  .cd-gallery ul {
+    text-align: justify;
+  }
+  .cd-gallery ul:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .cd-gallery li {
+    width: 48%;
+  }
+}
+
+@media only screen  and (min-width: 1170px) {  /* passage à 3 blocs par ligne à partir de 1170px de large */
+  .cd-gallery {
+    padding: 0px 2%;
+    float: right;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+    width: calc(100% - 200px);
+  }
+  .cd-gallery li {
+    width: 32%;
+  }
+}
+
+/* -------------------------------- 
+Barre de filtres
+-------------------------------- */
+
+.top-filter-back-button { /* bouton retour en haut de la barre de filtre */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  padding: 0 10px;
+  line-height: 50px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #3a6898;
+  z-index: 3;
+  width: 50px;
+}
+
+.top-filter-back-button:hover { background-color: #39628c; }
+
+.cd-filter { /* barre de filtres */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 450px;
+  background: #ffffff;
+  z-index: 2;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  -webkit-transition: -webkit-transform 0.3s, box-shadow 0.3s;
+  -moz-transition: -moz-transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cd-filter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #336ca9;
+  z-index: 2;
+}
+
+.cd-filter form {
+  padding: 70px 20px;
+}
+
+.cd-filter-block {
+  margin-bottom: 1.2em;
+}
+
+.cd-filter-block h4 {
+  position: relative;
+  padding: 10px 0 10px 0px;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.5em;
+}
+
+.cd-filter-block input, .cd-filter-block select,
+.cd-filter-block .radio-label::before,
+.cd-filter-block .checkbox-label::before {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 0;
+  background-color: #ffffff;
+  border: 2px solid #e6e6e6;
+}
+
+.cd-filter-block select {
+  width: 100%;
+  padding: .8em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  box-shadow: none;
+}
+
+.cd-filter-block .cd-select {
+  position: relative;
+}
+
+.cd-filter-block .cd-select::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  right: 14px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/cd-icon-arrow.svg") no-repeat center center;
+  pointer-events: none;
+}
+
+.cd-filter-block select {
+  cursor: pointer;
+  font-size: 0.5em;
+}
+
+.cd-filter-block select::-ms-expand {
+  display: none;
+}
+
+.cd-filter-block .list li {
+  position: relative;
+}
+
+.cd-filter-block .list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.cd-filter-block input[type=radio],
+.cd-filter-block input[type=checkbox] {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  z-index: 2;
+  width: 100%; /* permet le click sur le texte */
+  height: 20px;
+}
+
+.cd-filter-block .checkbox-label,
+.cd-filter-block .radio-label {
+  padding-left: 24px;
+  vertical-align: 3px;
+  font-size: 0.5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cd-filter-block .checkbox-label::before, .cd-filter-block .checkbox-label::after,
+.cd-filter-block .radio-label::before,
+.cd-filter-block .radio-label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.cd-filter-block .checkbox-label::before,
+.cd-filter-block .radio-label::before {
+  width: 16px;
+  height: 16px;
+  left: 0;
+}
+
+.cd-filter-block .checkbox-label::after,
+.cd-filter-block .radio-label::after {
+  display: none;
+}
+
+.cd-filter-block .checkbox-label::after {
+  width: 16px;
+  height: 16px;
+  background: url("../img/cd-icon-check.svg") no-repeat center center;
+}
+
+.cd-filter-block .radio-label::before,
+.cd-filter-block .radio-label::after {
+  border-radius: 50%;
+}
+
+.cd-filter-block .radio-label::after {
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  left: 5px;
+}
+
+.cd-filter-block input[type=radio]:checked + label::before,
+.cd-filter-block input[type=checkbox]:checked + label::before {
+  border-color: #3a6898; /* bleu foncé charte insite */
+  background-color: #3a6898; /* bleu foncé charte insite */
+}
+
+.cd-filter-block input[type=radio]:checked + label::after,
+.cd-filter-block input[type=checkbox]:checked + label::after {
+  display: block;
+}
+
+@-moz-document url-prefix() {
+  /* firefox: pas de fleche sur menu select; */
+  .cd-filter-block .cd-select::after {
+    display: none;
+  }
+}
